@@ -33,5 +33,6 @@ function completarLaComunidad(){
         laComunidadDelAnillo.add(element);
     })
 };
+
 completarLaComunidad();
 console.log(laComunidadDelAnillo);

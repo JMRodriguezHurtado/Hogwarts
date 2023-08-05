@@ -24,7 +24,7 @@ function traeAlRey(array){
 traeAlRey(comunidad);
 
 let elRey = comunidad.shift();
-
+console.log(comunidad);
 traeAlRey(comunidad);
 
 comunidad.unshift(elRey);

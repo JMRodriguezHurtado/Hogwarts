@@ -13,10 +13,13 @@ function Stacks() {
     Stacks.prototype.size = function() {
       return this.items.length;
     };
+    Stacks.prototype.agregaarray = function(array) {
+      return array.forEach((element) => this.items.unshift(element));
+    }
 
     //Probamos el stack
 
-    function reverseString(str) {
+    /*function reverseString(str) {
         
         const stack = new Stacks();
 
@@ -72,20 +75,30 @@ function Stacks() {
         }
       
         return reorganizedArr;
-      }
+      }*/
       
-const comunidad = ["Aragorn", 
-"Frodo", 
-"Sam", 
-"Pippin", 
-"Boromir", 
-"Legolas", 
-"Gimly", 
-"Gandalf", 
-"Galadriel", 
-"Merryl"];
+const comunidad = [{ heroe: "Aragorn", raza: "Humano", edad: 92, nacionalidad: "Gondor"},  
+{heroe: "Frodo", raza: "Halfling", edad: 21, nacionalidad: "La Comarca"},
+{heroe: "Sam", raza: "Halfling", edad: 22, nacionalidad: "La Comarca"}, 
+{heroe: "Pippin", raza: "Halfling", edad: 19, nacionalidad: "La Comarca"}, 
+{heroe: "Boromir", raza: "Humano", edad: 32, nacionalidad: "Gondor"}, 
+{heroe: "Legolas", raza: "Elfo", edad: 10000, nacionalidad: "Bosques de Plata"},
+{heroe: "Gimly", raza: "Enano", edad: 250, nacionalidad: "Minas de Moria"},
+{heroe: "Gandalf", raza: "Antiguo mago", edad: undefined, nacionalidad: undefined}, 
+{heroe: "Galadriel", raza: "Elfo", edad: 1000000, nacionalidad: "El viejo mundo"}, 
+{heroe: "Merryl", raza: "Halfling", edad: 18, nacionalidad: "La Comarca"}];
 
-const reorganized = reorganizeArrayWithStacks(comunidad);
+const laComunidadHoHo = new Stacks;
+laComunidadHoHo.agregaarray(comunidad);
+console.log(laComunidadHoHo);
+
+
+
+/*const reorganized = reorganizeArrayWithStacks(comunidad);
 console.log("Input Array:", comunidad);
-console.log("Reorganized Array:", reorganized);
+console.log("Reorganized Array:", reorganized);*/
+
+
+
+
       
