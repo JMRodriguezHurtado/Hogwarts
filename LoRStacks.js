@@ -17,65 +17,6 @@ function Stacks() {
       return array.forEach((element) => this.items.unshift(element));
     }
 
-    //Probamos el stack
-
-    /*function reverseString(str) {
-        
-        const stack = new Stacks();
-
-        for (let i = 0; i < str.length; i++) {
-          stack.onstack(str[i]);
-        }
-
-        let reversedStr = '';
-        while (stack.size() > 0) {
-          reversedStr += stack.destack();
-        }
-      
-        return reversedStr;
-      }
-
-    const inputString = "Hello, World!";
-    const reversed = reverseString(inputString);
-    console.log("Input String:", inputString);
-    console.log("Reversed String:", reversed);
-
-    //Otra prueba usando cosas
-
-    //Ejemplos usando al señor de los Anillos
-
-    function isVowel(char) {
-        return ['a', 'e', 'i', 'o', 'u'].includes(char.toLowerCase());
-      }
-      
-      function reorganizeArrayWithStacks(arr) {
-        // Create two stacks, one for strings starting with vowels and one for strings starting with consonants
-        const vowelStack = new Stacks();
-        const consonantStack = new Stacks();
-      
-        // Separate strings into respective stacks based on whether they start with a vowel or consonant
-        for (let i = 0; i < arr.length; i++) {
-          const firstChar = arr[i][0];
-          if (isVowel(firstChar)) {
-            vowelStack.onstack(arr[i]);
-          } else {
-            consonantStack.onstack(arr[i]);
-          }
-        }
-      
-        // Reorganize the array by popping strings from both stacks alternately
-        const reorganizedArr = [];
-        while (vowelStack.size() > 0 || consonantStack.size() > 0) {
-          if (vowelStack.size() > 0) {
-            reorganizedArr.push(vowelStack.destack());
-          }
-          if (consonantStack.size() > 0) {
-            reorganizedArr.push(consonantStack.destack());
-          }
-        }
-      
-        return reorganizedArr;
-      }*/
       
 const comunidad = [{ heroe: "Aragorn", raza: "Humano", edad: 92, nacionalidad: "Gondor"},  
 {heroe: "Frodo", raza: "Halfling", edad: 21, nacionalidad: "La Comarca"},
@@ -92,11 +33,33 @@ const laComunidadHoHo = new Stacks;
 laComunidadHoHo.agregaarray(comunidad);
 console.log(laComunidadHoHo);
 
+let humanos = new Stacks;
+let halfling = new Stacks;
+let elfo = new Stacks;
+let otro = new Stacks;
 
+function separadorDeRazas(fromStack, toStack1, toStack2, toStack3, toStack4) {
+  while(fromStack.size() > 0) {
+    const char = fromStack.destack();
+    console.log(char);
+  if (char.raza === "Humano") {
+    toStack1.onstack(char); 
+  }
+  else if (char.raza === "Halfling") {
+     toStack2.onstack(char);
+  }
+  else if (char.raza === "Elfo") {
+     toStack3.onstack(char);
+  }
+  else toStack4.onstack(char);
+}}
 
-/*const reorganized = reorganizeArrayWithStacks(comunidad);
-console.log("Input Array:", comunidad);
-console.log("Reorganized Array:", reorganized);*/
+separadorDeRazas(laComunidadHoHo, humanos, halfling, elfo, otro)
+console.log(humanos);
+console.log(halfling);
+console.log(elfo);
+console.log(otro);
+
 
 
 
