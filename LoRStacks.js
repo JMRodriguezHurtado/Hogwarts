@@ -59,7 +59,8 @@ console.log(humanos);
 console.log(halfling);
 console.log(elfo);
 console.log(otro);
-
+console.log(laComunidadHoHo);
+console.log(humanos.size());
 
 
 
