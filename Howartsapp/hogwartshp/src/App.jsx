@@ -42,7 +42,7 @@ function App() {
 
   function searchHandler(id) {
     axios(
-      `https://rym2-production.up.railway.app/api/character/${id}?key=henrym-JMRodriguezHurtado`
+      `https://rickandmortyapi.com/api/character/${id}`
     ).then(({data}) => {
       if (data.name) {
         setCharacters((oldChars) => [...oldChars, data]);
