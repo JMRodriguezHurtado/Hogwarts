@@ -7,7 +7,7 @@ function Nav({onSearch, randomize}) {
       <div>
         <Link to="/about">About</Link>
         <Link to="/home">Home</Link>
-        <Link to="/favorites"></Link>
+        <Link to="/favorites">Favorites</Link>
       </div>
 
       <SearchBar onSearch={onSearch} />
