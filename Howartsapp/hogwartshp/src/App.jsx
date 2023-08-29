@@ -4,20 +4,35 @@ import axios from "axios";
 
 import Cards from "./components/Cards.jsx";
 import Nav from "./components/Nav.jsx";
-import About from "./views/About.jsx";
-
-import "./App.css";
 import Detail from "./views/Detail.jsx";
 import ErrorPage from "./views/ErrorPage.jsx";
 import Login from "./views/Login.jsx";
+import Favorites from "./views/Favorites.jsx";
+import About from "./views/About.jsx";
 
+import "./App.css";
+
+// const example = [
+//   {
+//     id: 1,
+//     name: "Rick Sanchez",
+//     status: "Alive",
+//     species: "Human",
+//     gender: "Male",
+//     origin: {
+//       name: "Earth (C-137)",
+//       url: "https://rickandmortyapi.com/api/location/1",
+//     },
+//     image: "https://rickandmortyapi.com/api/character/avatar/1.jpeg",
+//   },
+// ];
 
 function App() {
   const location = useLocation();
   const [characters, setCharacters] = useState([]);
   const navigate = useNavigate();
 
-  const [access, setAccess] = useState(false);
+  const [access, setAccess] = useState(true);
   const EMAIL = "jmrodhurtado1989@hotmail.com";
   const PASSWORD = "123456a";
 
@@ -98,6 +113,7 @@ function App() {
           element={<Cards characters={characters} onClose={closeHandler} />}
         />
         <Route path="/about" element={<About />} />
+        <Route path="/favorites" element={<Favorites />} />
         <Route path="/detail/:id" element={<Detail />} />
         <Route path="*" element={<ErrorPage />} />
       </Routes>
