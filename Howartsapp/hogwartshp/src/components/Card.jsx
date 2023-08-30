@@ -7,10 +7,17 @@ function Card(props) {
   const navigate = useNavigate();
   const {character, onClose, favorites, addFavorite, removeFavorite} = props;
   const [isFav, setFav] = useState(false);
+  const [closeBtn, setCloseBtn] = useState(true);
 
   function navigateHandler() {
     navigate(`/detail/${character.id}`);
   }
+
+  useEffect(() => {
+    if(!onClose) {
+      setCloseBtn(false);
+    }
+  }, []);
 
   useEffect(() => {
     //[rick, morty, mr poppybutthole]
@@ -33,13 +40,10 @@ function Card(props) {
 
   return (
     <div>
-      <button
-        onClick={() => {
-          onClose(character.id);
-        }}
-      >
-        X
-      </button>
+      {closeBtn && (<button onClick={() => {
+        onClose(character.id);
+      }}
+      >X</button>)}
 
       <h2>Name: {character.name}</h2>
       {isFav ? (

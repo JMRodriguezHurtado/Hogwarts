@@ -1,7 +1,7 @@
 function About() {
     return (
       <div>
-        <h1>Esto me esta rompiendo los huevos</h1>
+        <h1>Esto esta casi terminado</h1>
       </div>
     );
   }
