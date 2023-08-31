@@ -46,7 +46,7 @@ function App() {
   function logoutHandler() {
     setAccess(false);
   }
-
+  
   useEffect(() => {
     !access && navigate("/");
     //eslint-disable-next-line
@@ -102,7 +102,7 @@ function App() {
         <Nav
           onSearch={searchHandler}
           randomize={randomHandler}
-          logout={logoutHandler}
+          onLogOut={logoutHandler}
         />
       )}
 
