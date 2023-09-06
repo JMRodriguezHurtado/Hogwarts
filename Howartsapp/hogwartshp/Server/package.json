@@ -1,0 +1,11 @@
+{
+  "name": "rick-demo",
+  "version": "1.0.0",
+  "description": "rickbackend",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "JMRH",
+  "license": "ISC"
+}
