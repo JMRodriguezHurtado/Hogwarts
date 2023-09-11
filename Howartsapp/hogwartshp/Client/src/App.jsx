@@ -2,6 +2,7 @@ import {useState, useEffect} from "react";
 import {Route, Routes, useLocation, useNavigate} from "react-router-dom";
 import axios from "axios";
 
+
 import Cards from "./components/Cards.jsx";
 import Nav from "./components/Nav.jsx";
 import Detail from "./views/Detail.jsx";
@@ -118,6 +119,7 @@ function App() {
         <Route path="/detail/:id" element={<Detail />} />
         <Route path="*" element={<ErrorPage />} />
       </Routes>
+      
     </div>
   );
 }
