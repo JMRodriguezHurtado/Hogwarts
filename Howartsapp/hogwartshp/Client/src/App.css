@@ -4,7 +4,9 @@
   padding: 2rem;
   text-align: center;
 }
-
+#background {
+  color: rgb(41, 62, 119);
+}
 .logo {
   height: 6em;
   padding: 1.5em;
@@ -24,7 +26,7 @@
         height: max-content;
         z-index: -1;
         object-fit: cover;}
-        
+
 @keyframes logo-spin {
   from {
     transform: rotate(0deg);
