@@ -9,7 +9,7 @@ function Nav({onSearch, randomize, onLogOut}) {
         <Link to="/about">About</Link>
         <Link to="/home">Home</Link>
         <Link to="/favorites">Favorites</Link>
-        <button onClick={onLogOut}>Logout</button>
+        <Link to="/"><button onClick={onLogOut}>Logout</button></Link>
       </div>
 
       <SearchBar onSearch={onSearch} />

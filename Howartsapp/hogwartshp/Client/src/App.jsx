@@ -2,7 +2,6 @@ import {useState, useEffect} from "react";
 import {Route, Routes, useLocation, useNavigate} from "react-router-dom";
 import axios from "axios";
 
-
 import Cards from "./components/Cards.jsx";
 import Nav from "./components/Nav.jsx";
 import Detail from "./views/Detail.jsx";
@@ -13,36 +12,28 @@ import About from "./views/About.jsx";
 
 import "./App.css";
 
-// const example = [
-//   {
-//     id: 1,
-//     name: "Rick Sanchez",
-//     status: "Alive",
-//     species: "Human",
-//     gender: "Male",
-//     origin: {
-//       name: "Earth (C-137)",
-//       url: "https://rickandmortyapi.com/api/location/1",
-//     },
-//     image: "https://rickandmortyapi.com/api/character/avatar/1.jpeg",
-//   },
-// ];
-
 function App() {
   const location = useLocation();
   const [characters, setCharacters] = useState([]);
   const navigate = useNavigate();
 
   const [access, setAccess] = useState(true);
-
-  function loginHandler(userData) {
-    const {email, password} = userData;
-    const URL = "http://localhost:3001/rickandmorty/login/";
-    axios(URL + `?email=${email}&password=${password}`).then(({data}) => {
-      const {access} = data;
+  
+  function logOut() {
+    navigate("/");
+    logoutHandler();
+  }
+  async function loginHandler(userData) {
+    try {
+      const {email, password} = userData;
+      const URL = "http://localhost:3001/rickandmorty/login/";
+      const {data} = await axios(URL + `?email=${email}&password=${password}`);
+      const {access} = data; //true / false
       setAccess(access);
       access && navigate("/home");
-    });
+    } catch (error) {
+      alert(error);
+    }
   }
 
   function logoutHandler() {
@@ -54,19 +45,22 @@ function App() {
     //eslint-disable-next-line
   }, [access]);
 
-  // nueva API
-  //*https://rym2-production.up.railway.app/api/character/${id}?key=henrym-usuariodegithub
 
-  function searchHandler(id) {
-    axios(`http://localhost:3001/rickandmorty/character/${id}`).then(
-      ({data}) => {
-        if (data.name) {
-          setCharacters((oldChars) => [...oldChars, data]);
-        } else {
-          window.alert("¡No hay personajes con este ID!");
-        }
+  async function searchHandler(id) {
+    try {
+      const {data} = await axios(
+        `http://localhost:3001/rickandmorty/character/${id}`
+      );
+
+      if (data.name) {
+        setCharacters((oldChars) => [...oldChars, data]);
+      } else {
+        throw new Error("¡No hay personajes con este ID!");
       }
-    );
+    } catch (error) {
+      console.log(error);
+      alert(error.message);
+    }
   }
 
   function closeHandler(id) {
@@ -104,7 +98,7 @@ function App() {
         <Nav
           onSearch={searchHandler}
           randomize={randomHandler}
-          logout={logoutHandler}
+          logout={logOut}
         />
       )}
 
@@ -119,7 +113,6 @@ function App() {
         <Route path="/detail/:id" element={<Detail />} />
         <Route path="*" element={<ErrorPage />} />
       </Routes>
-      
     </div>
   );
 }
