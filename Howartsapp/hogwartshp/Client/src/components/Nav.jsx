@@ -5,17 +5,19 @@ import styles from "./Nav.module.css"
 
 function Nav({onSearch, randomize, onLogOut}) {
   return (
+    <nav className={styles.nav}>
     <div>
-      <div> 
+      <div className={styles.logoColor}> 
         <Link to="/about">About</Link>
         <Link to="/home">     Home    </Link>
         <Link to="/favorites">     Favorites    </Link>
-        <Link to="/"><button onClick={onLogOut}>Logout</button></Link>
+        <Link className={styles.logoColor} to="/"><button onClick={onLogOut}>Logout</button></Link>
       </div>
 
       <SearchBar onSearch={onSearch} />
       <button onClick={randomize}>ADD RANDOM</button>
     </div>
+    </nav>
   );
 }
 
