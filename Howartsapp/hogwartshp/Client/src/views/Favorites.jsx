@@ -2,6 +2,7 @@
 import {useSelector, useDispatch} from "react-redux";
 import {sortById, filterByGender, reset} from "../redux/actions/actions";
 import Cards from "../components/Cards";
+import styles from "./Favorites.module.css"
 
 function Favorites() {
   const dispatch = useDispatch();
@@ -21,6 +22,8 @@ function Favorites() {
 
   return (
     <div>
+      <div className={styles.container}>
+        <h1>Favorites</h1>
       <select placeholder="Gender" onChange={filterHandler}>
         {["Male", "Female", "unknown", "Genderless"].map((gender) => (
           <option key={gender} value={gender}>
@@ -37,6 +40,7 @@ function Favorites() {
       </select>
       <button onClick={resetHandler}>RESET</button>
       <Cards characters={favorites} />
+    </div>
     </div>
   );
 }

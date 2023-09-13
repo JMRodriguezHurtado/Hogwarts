@@ -1,6 +1,7 @@
 import {useState, useEffect} from "react";
 import {useParams} from "react-router-dom";
 import axios from "axios";
+import styles from "./Detail.module.css";
 
 function Detail() {
   const [character, setCharacter] = useState({});
@@ -22,13 +23,13 @@ function Detail() {
   }, []);
 
   return (
-    <div>
-      <div>
+    <div className={styles.detailCard}>
+      <div className={styles.detailCardImage}>
         <h2>{character.name}</h2>
         <img src={character.image} alt={character.name} />
       </div>
       <div>
-        <div>
+        <div className={styles.detailCardInfo}> 
           <h3>Species:</h3>
           <p>{character.species}</p>
         </div>

@@ -2,6 +2,7 @@ import {useNavigate} from "react-router-dom";
 import {connect} from "react-redux";
 import {addFavorite, removeFavorite} from "../redux/actions/actions";
 import {useState, useEffect} from "react";
+import styles from "./Card.module.css"
 
 function Card(props) {
   const navigate = useNavigate();
@@ -39,15 +40,16 @@ function Card(props) {
   }
 
   return (
-    <div>
-      {closeBtn && (<button onClick={() => {
+  <div className={styles.card} tabIndex="0">
+    <div className={styles.text}>
+      {closeBtn && (<button className={closeBtn} onClick={() => {
         onClose(character.id);
       }}
       >X</button>)}
 
-      <h2>Name: {character.name}</h2>
+      <h2 className={styles.h2text}>Name: {character.name}</h2>
       {isFav ? (
-        <button
+        <button className={styles.favoriteBtn}
           onClick={() => {
             handleFavorite(character.id);
           }}
@@ -55,7 +57,7 @@ function Card(props) {
           ❤️
         </button>
       ) : (
-        <button
+        <button className={styles.favoriteBtn}
           onClick={() => {
             handleFavorite(character);
           }}
@@ -63,10 +65,11 @@ function Card(props) {
           🤍
         </button>
       )}
-      <h2>Species: {character.species}</h2>
-      <h2>Gender: {character.gender}</h2>
+      <p className={styles.ptext}>Species: {character.species}</p>
+      <p className={styles.ptext}>Gender: {character.gender}</p>
       <img src={character.image} alt={name} onClick={navigateHandler} />
     </div>
+    ,/</div>
   );
 }
 
