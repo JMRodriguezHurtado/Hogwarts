@@ -15,7 +15,7 @@ function Nav({onSearch, randomize, onLogOut}) {
       </div>
 
       <SearchBar onSearch={onSearch} />
-      <button onClick={randomize}>ADD RANDOM</button>
+      <button onClick={randomize}>RANDOM</button>
     </div>
     </nav>
   );

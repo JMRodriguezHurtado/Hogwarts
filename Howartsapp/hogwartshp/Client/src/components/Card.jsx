@@ -40,14 +40,14 @@ function Card(props) {
   }
 
   return (
-  <div className={styles.card} tabIndex="0">
-    <div className={styles.text}>
-      {closeBtn && (<button className={closeBtn} onClick={() => {
+  <div className={styles.card}>
+    <div>
+      {closeBtn && (<button className={styles.closeBtn} onClick={() => {
         onClose(character.id);
       }}
       >X</button>)}
 
-      <h2 className={styles.h2text}>Name: {character.name}</h2>
+      <h2 className={styles.h2text}>Name:{character.name}</h2>
       {isFav ? (
         <button className={styles.favoriteBtn}
           onClick={() => {

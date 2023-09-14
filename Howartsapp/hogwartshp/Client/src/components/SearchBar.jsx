@@ -20,7 +20,7 @@ export default function SearchBar({onSearch}) {
           onSearch(id);
         }}
       >
-        Agregar
+        ADD
       </button>
     </div>
   );

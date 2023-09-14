@@ -39,7 +39,7 @@
     top: 0;
     left: 0;
     background: rgba(0, 0, 0, 0.5);
-    position: absolute;
+    position: cover;
     transform-origin: top;
     transform: scaleX(0);
     transition: all var(--cover-timing) var(--cover-ease);
@@ -56,22 +56,7 @@
     box-shadow: white 0 5vw 6vw -9vw, var(--highlight) 0 5.5vw 5vw -7.5vw,
       rgba(50, 50, 80, 0.5) 0px 4vw 8vw -2vw, rgba(0, 0, 0, 0.8) 0px 4vw 5vw -3vw;
   }
-  
-  .card:hover::before,
-  .card:hover::after,
-  .card:focus::before,
-  .card:focus::after {
-    transform: scaleX(1);
-  }
-  
-  .card:hover .h2text .char,
-  .card:hover .ptext .word,
-  .card:focus .h2text .char,
-  .card:focus .ptext .word {
-    opacity: 1;
-    transform: translateY(0);
-    color: inherit;
-  }
+
   
   .card:hover .h2text .char,
   .card:focus .h2text .char {
@@ -102,12 +87,13 @@
   
   .text {
     position: absolute;
-    inset: 20px;
+    inset: 10px;
     top: auto;
   }
   
   .h2text {
-    font-size: 30px;
+    text-align: justify;
+    font-size: 10px;
     font-size: clamp(20px, 4vw, 40px);
     font-weight: 800;
     margin-bottom: 0.2em;
@@ -127,12 +113,16 @@
     color: var(--highlight);
     display: inline-block;
     opacity: 0;
-    position: relative;
+    position: fixed;
     transform: translateY(20px);
     transition-property: transform, opacity, color;
     transition-timing-function: var(--text-ease);
     transition-duration: var(--text-timing), var(--text-timing),
       calc(var(--text-timing) * 2);
+  }
+  .closeBtn{
+    display: fixed;
+    text-align: left;
   }
   
   img {
@@ -146,13 +136,13 @@
   
   main {
     grid-template-columns: 1fr;
-    grid-template-rows: 60px;
+    grid-template-rows: 40px;
     grid-gap: 2em;
   }
   
   @media screen and (min-width: 600px) {
     main {
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
       grid-template-rows: min-content 1fr;
     }
   }

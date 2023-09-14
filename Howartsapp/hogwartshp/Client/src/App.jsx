@@ -9,8 +9,8 @@ import ErrorPage from "./views/ErrorPage.jsx";
 import Login from "./views/Login.jsx";
 import Favorites from "./views/Favorites.jsx";
 import About from "./views/About.jsx";
-
-import "./App.css";
+import RickandMortyclip from "./assets/videos/RickandMortyclip.mp4"
+import styles from "./App.css";
 
 function App() {
   const location = useLocation();
@@ -89,7 +89,7 @@ function App() {
   }
 
   return (
-    <div className="App">
+    <div className=".App">
       {/* {location.pathname === "/" ? null : (
         <Nav onSearch={searchHandler} randomize={randomHandler} />
       )} */}
@@ -113,6 +113,7 @@ function App() {
         <Route path="/detail/:id" element={<Detail />} />
         <Route path="*" element={<ErrorPage />} />
       </Routes>
+      <video className={styles.video} src={RickandMortyclip} autoPlay loop muted/>
     </div>
   );
 }
