@@ -1,5 +1,5 @@
 .nav {
-    position: fixed; 
+    position: flex; 
     top: 0%; 
     left: 0%;
     width: 100%;
@@ -7,16 +7,20 @@
     padding: 20px;
     text-align: center;
     z-index: 999; 
+    height: 50px;
 }
 .button {
+    display: flex;
     padding: 10px 20px;
     font-size: 16px;
     text-align: center;
     background-color: rgb(12, 231, 12);
+    border-radius: 8px;
 }
 .button:hover{
     background-color: rgb(90, 15, 212);
     transform: scale(1.05);
+    border-radius: 8px;
 }
 
 .nav a {
@@ -29,8 +33,12 @@
 }
 
 .input {
+    display: flex;
+    margin-top: 10px;
+    position:top;
     padding: 10px 20px;
     font-size: 18px;
+    border-radius: 8px;
 }
 .nav a:hover {
     background-color: #56cb6f;

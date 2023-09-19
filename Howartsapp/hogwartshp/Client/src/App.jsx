@@ -106,7 +106,7 @@ function App() {
       )}
 
       <Routes>
-        <Route path="/" element={<Login login={loginHandler} />} />
+        <Route path="/" element={<Login className={styles.login} login={loginHandler} />} />
         <Route
           path="/home"
           element={<Cards characters={characters} onClose={closeHandler} />}
