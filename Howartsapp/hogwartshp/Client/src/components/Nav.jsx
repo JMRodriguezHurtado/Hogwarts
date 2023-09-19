@@ -7,15 +7,15 @@ function Nav({onSearch, randomize, onLogOut}) {
   return (
     <nav className={styles.nav}>
     <div>
-      <div className={styles.logoColor}> 
+      <div > 
         <Link to="/about">About</Link>
         <Link to="/home">     Home    </Link>
         <Link to="/favorites">     Favorites    </Link>
-        <Link className={styles.logoColor} to="/"><button onClick={onLogOut}>Logout</button></Link>
+        <Link to="/"><button className={styles.button} onClick={onLogOut}>Logout</button></Link>
       </div>
 
       <SearchBar onSearch={onSearch} />
-      <button onClick={randomize}>RANDOM</button>
+      <button className= {styles.button} onClick={randomize}>RANDOM</button>
     </div>
     </nav>
   );

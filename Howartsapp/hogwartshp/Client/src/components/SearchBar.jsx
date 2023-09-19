@@ -1,4 +1,5 @@
 import {useState} from "react";
+import styles from "./Nav.module.css"
 
 export default function SearchBar({onSearch}) {
   const [id, setId] = useState("");
@@ -9,13 +10,13 @@ export default function SearchBar({onSearch}) {
 
   return (
     <div>
-      <input
+      <input className={styles.input}
         type="search"
         onChange={changeHandler}
         value={id}
         placeholder="Search Character"
       />
-      <button
+      <button className={styles.button}
         onClick={() => {
           onSearch(id);
         }}

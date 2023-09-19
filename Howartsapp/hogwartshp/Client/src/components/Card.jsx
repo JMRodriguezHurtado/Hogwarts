@@ -47,7 +47,7 @@ function Card(props) {
       }}
       >X</button>)}
 
-      <h2 className={styles.h2text}>Name:{character.name}</h2>
+      <h2 className={styles.h2}>Name:{character.name}</h2>
       {isFav ? (
         <button className={styles.favoriteBtn}
           onClick={() => {
@@ -69,7 +69,7 @@ function Card(props) {
       <p className={styles.ptext}>Gender: {character.gender}</p>
       <img src={character.image} alt={name} onClick={navigateHandler} />
     </div>
-    ,/</div>
+    </div>
   );
 }
 

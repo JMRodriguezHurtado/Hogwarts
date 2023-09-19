@@ -38,7 +38,7 @@ function Favorites() {
           </option>
         ))}
       </select>
-      <button onClick={resetHandler}>RESET</button>
+      <button className={styles.reset} onClick={resetHandler}>RESET</button>
       <Cards characters={favorites} />
     </div>
     </div>

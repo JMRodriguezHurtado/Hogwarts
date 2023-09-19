@@ -10,7 +10,8 @@ import Login from "./views/Login.jsx";
 import Favorites from "./views/Favorites.jsx";
 import About from "./views/About.jsx";
 import RickandMortyclip from "./assets/videos/RickandMortyclip.mp4"
-import styles from "./App.css";
+import styles from "./App.module.css"
+
 
 function App() {
   const location = useLocation();
@@ -89,11 +90,13 @@ function App() {
   }
 
   return (
-    <div className=".App">
-      {/* {location.pathname === "/" ? null : (
-        <Nav onSearch={searchHandler} randomize={randomHandler} />
-      )} */}
-
+    <div>
+      <div className={styles['video-container']}>
+                <video autoPlay loop muted>
+                    <source src={RickandMortyclip} type="video/mp4" />
+                    
+                </video>
+            </div>
       {location.pathname !== "/" && (
         <Nav
           onSearch={searchHandler}
@@ -113,7 +116,7 @@ function App() {
         <Route path="/detail/:id" element={<Detail />} />
         <Route path="*" element={<ErrorPage />} />
       </Routes>
-      <video className={styles.video} src={RickandMortyclip} autoPlay loop muted/>
+      
     </div>
   );
 }
